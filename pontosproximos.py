@@ -1,3 +1,6 @@
+import numpy as np
+
+### Função que calcula a distância euclidiana entre dois pontos em R^2
 def dist(a,b):
     return np.sqrt((a[0]-b[0])**2+(a[1]-b[1])**2)
 
@@ -47,7 +50,6 @@ def pardiv(x,partes):
             distmin=bruto(cross)[2]
         beg=end # ir para o próximo subconjunto, repetir até chegar ao fim dos dados
     return(ponto1,ponto2,distmin)
-  
 import random
 import timeit
 
@@ -58,9 +60,9 @@ for i in range(0,len(test)):
 start=timeit.default_timer()
 bruto(test)
 stop=timeit.default_timer()
-print stop-start # tempo de processamento força bruta
+print (stop-start) # tempo de processamento força bruta
 
 start=timeit.default_timer()
 pardiv(test,30) # resolve dividindo os dados em 30 pedaços
 stop=timeit.default_timer()
-print stop-start # tempo de processamento dividir e conquistar
+print (stop-start) # tempo de processamento dividir e conquistar
